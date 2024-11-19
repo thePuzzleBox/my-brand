@@ -42,7 +42,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
   height: 10vh; /* Use viewport height for consistent ratio */
   z-index: 10;
   display: flex;
@@ -102,9 +102,9 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  background-color: rgba(0, 0, 0, 0.9); /* Semi-transparent black */
   text-align: center;
-  height: 4.5vh; /* Use viewport height for consistent footer size */
+  height: 7vh; /* Use viewport height for consistent footer size */
   display: flex;
   align-items: center; /* Center text vertically */
   justify-content: center; /* Center text horizontally */
