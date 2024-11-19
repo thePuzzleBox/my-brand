@@ -11,6 +11,10 @@ body, html {
   overflow: hidden;
 }
 
+body {
+  background-color: black;
+}
+
 .video-container {
   position: fixed;
   top: 0;
