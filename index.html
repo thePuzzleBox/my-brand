@@ -10,6 +10,7 @@
 </head>
 <body>
 
+
   <!-- Navbar -->
   <nav class="navbar">
     <h1 class="navbar-title"></h1> <!-- title here--> 
@@ -21,16 +22,43 @@
     </ul>
   </nav>
 
+
   <div class="video-container">
-    <video autoplay loop playsinline class="background-video">
+    <video  id="backgroundVideo" autoplay loop muted playsinline class="background-video">
       <source src="res/landing.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
+    <button id="unmuteButton" class="unmute-button">
+      <i class="fas fa-volume-up"></i>
+    </button>
+    
   </div>
+
+
 
   <footer class="footer">
     <p></p>
   </footer>
+
+
+
+  <script>
+    const video = document.getElementById("backgroundVideo");
+    const unmuteButton = document.getElementById("unmuteButton");
+    const icon = unmuteButton.querySelector("i");
+
+    unmuteButton.addEventListener("click", () => {
+      if (video.muted) {
+        video.muted = false;
+        icon.classList.remove("fa-volume-mute");
+        icon.classList.add("fa-volume-up");
+    } else {
+      video.muted = true;
+      icon.classList.remove("fa-volume-up");
+      icon.classList.add("fa-volume-mute");
+    }
+  });
+  </script>  
 
 </body>
 </html>

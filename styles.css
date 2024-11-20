@@ -15,6 +15,7 @@ body {
   background-color: black;
 }
 
+/* Video container styles */
 .video-container {
   position: fixed;
   top: 0;
@@ -22,7 +23,7 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: -1; /* Places the video behind the content */
+  z-index: 0; /* Set z-index to 0 so other content can be above */
 }
 
 .background-video {
@@ -37,6 +38,7 @@ body {
   object-fit: cover; /* Ensures the video covers the entire container */
 }
 
+
 /* Navbar styles */
 .navbar {
   position: fixed;
@@ -44,7 +46,7 @@ body {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent black */
   height: 10vh; /* Use viewport height for consistent ratio */
-  z-index: 10;
+  z-index: 10; /* Keep navbar above other content */
   display: flex;
   align-items: center; /* Center content vertically */
 }
@@ -55,13 +57,6 @@ body {
   margin-left: 2vw; /* Adjust margin using viewport width */
   white-space: nowrap; /* Prevents the title from wrapping to the next line */
   max-width: 50vw; /* Limits title width to ensure it stays on one line */
-}
-
-@media (max-width: 768px) {
-  .navbar-title {
-    font-size: clamp(1.2rem, 3vw, 3.5vw); /* Adjust scaling for smaller screens */
-    max-width: 60vw; /* Further restricts title width on smaller screens */
-  }
 }
 
 .icon-wrapper {
@@ -97,6 +92,35 @@ body {
   color: rgba(255, 255, 255, 0.7); /* More white on hover */
 }
 
+
+/* Unmute button styling */
+.unmute-button {
+  position: absolute;
+  bottom: 60px;
+  right: 40px;
+  background-color: transparent; /* Remove background */
+  color: rgba(255, 255, 255, 0.5);
+  border: none;
+  padding: 0; /* Remove padding to allow icon size to control */
+  cursor: pointer; /* Shows pointer on hover */
+  z-index: 10;
+  transition: color 0.3s ease;
+}
+
+.unmute-button i {
+  font-size: clamp(1.5rem, 1vw, 2vw);
+}
+
+/* Hover effects to match navbar icons */
+.unmute-button:hover i {
+  color: rgba(255, 255, 255, 0.7); /* Same hover effect as navbar icons */
+}
+
+.unmute-button:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+
 /* Footer styles */
 .footer {
   position: fixed;
@@ -108,7 +132,7 @@ body {
   display: flex;
   align-items: center; /* Center text vertically */
   justify-content: center; /* Center text horizontally */
-  z-index: 10;
+  z-index: 10; /* Keep footer above other content */
 }
 
 .footer a, .footer p {
@@ -121,19 +145,4 @@ body {
 
 .footer a:hover {
   color: rgba(255, 255, 255, 0.6); /* More white on hover */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .navbar-title {
-    font-size: clamp(1.2rem, 3vw, 4vw); /* Adjust scaling for smaller screens */
-  }
-
-  .navbar ul li a {
-    font-size: clamp(1.4rem, 2vw, 3vw); /* Adjust scaling for smaller screens */
-  }
-
-  .footer p, .footer a {
-    font-size: clamp(0.6rem, 1.4vw, 1.8vw); /* Adjust scaling for smaller screens */
-  }
 }
