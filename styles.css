@@ -48,13 +48,16 @@ body {
   height: 10vh; /* Use viewport height for consistent ratio */
   z-index: 10; /* Keep navbar above other content */
   display: flex;
-  align-items: center;
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  position: relative;
 }
 
 .navbar-logo {
-  height: 20px;
-  margin-left: 2vw;
-  margin-right: 2vw;
+  height: 25px;
+  position: absolute;
+  left: 50%; /* Centers logo horizontally */
+  transform: translateX(-50%); /* Adjusts positioning to perfectly center */
 }
 
 .navbar-title {
