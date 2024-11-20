@@ -44,16 +44,22 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent black */
+  background-color: rgba(0, 0, 0, 0.85);
   height: 10vh; /* Use viewport height for consistent ratio */
   z-index: 10; /* Keep navbar above other content */
   display: flex;
-  align-items: center; /* Center content vertically */
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 20px;
+  margin-left: 2vw;
+  margin-right: 2vw;
 }
 
 .navbar-title {
-  color: rgba(255, 255, 255, 0.4); /* More transparent white */
-  font-size: clamp(1rem, 1.2vw, 2vw); /* Scalable text size using clamp */
+  color: rgba(255, 255, 255, 0.4);
+  font-size: clamp(1rem, 1.2vw, 2vw);
   margin-left: 2vw; /* Adjust margin using viewport width */
   white-space: nowrap; /* Prevents the title from wrapping to the next line */
   max-width: 50vw; /* Limits title width to ensure it stays on one line */
@@ -93,7 +99,6 @@ body {
 }
 
 
-/* Unmute button styling */
 .unmute-button {
   position: absolute;
   bottom: 60px;
@@ -108,12 +113,12 @@ body {
 }
 
 .unmute-button i {
-  font-size: clamp(1.5rem, 1vw, 2vw);
+  font-size: clamp(1.25rem, 1vw, 2vw);
 }
 
 /* Hover effects to match navbar icons */
 .unmute-button:hover i {
-  color: rgba(255, 255, 255, 0.7); /* Same hover effect as navbar icons */
+  color: rgba(255, 255, 255, 0.5); /* Same hover effect as navbar icons */
 }
 
 .unmute-button:focus {

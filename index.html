@@ -10,9 +10,9 @@
 </head>
 <body>
 
-
   <!-- Navbar -->
   <nav class="navbar">
+    <img src="res/img/icon.png" alt="Logo" class="navbar-logo">
     <h1 class="navbar-title"></h1> <!-- title here--> 
     <ul>
       <div class="icon-wrapper">
@@ -22,42 +22,53 @@
     </ul>
   </nav>
 
-
   <div class="video-container">
     <video  id="backgroundVideo" autoplay loop muted playsinline class="background-video">
       <source src="res/landing.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
     <button id="unmuteButton" class="unmute-button">
-      <i class="fas fa-volume-up"></i>
+      <i class="fas fa-volume-mute"></i>
     </button>
-    
   </div>
-
-
 
   <footer class="footer">
     <p></p>
   </footer>
 
-
-
   <script>
     const video = document.getElementById("backgroundVideo");
     const unmuteButton = document.getElementById("unmuteButton");
     const icon = unmuteButton.querySelector("i");
+    const navbar = document.querySelector('.navbar');
 
-    unmuteButton.addEventListener("click", () => {
+    // Function to toggle mute and update icon
+    function toggleMute() {
       if (video.muted) {
         video.muted = false;
         icon.classList.remove("fa-volume-mute");
         icon.classList.add("fa-volume-up");
-    } else {
-      video.muted = true;
-      icon.classList.remove("fa-volume-up");
-      icon.classList.add("fa-volume-mute");
+      } else {
+        video.muted = true;
+        icon.classList.remove("fa-volume-up");
+        icon.classList.add("fa-volume-mute");
+      }
     }
-  });
+
+    // Toggle mute on button click
+    unmuteButton.addEventListener("click", (event) => {
+      event.stopPropagation(); // Prevent the document click from also firing
+      toggleMute();
+    });
+
+    // Toggle mute when clicking anywhere on the page, except the navbar icons
+    document.addEventListener("click", (event) => {
+      // If the click is inside the navbar (icon or logo), prevent the mute toggle
+      if (navbar.contains(event.target)) {
+        return;
+      }
+      toggleMute();
+    });
   </script>  
 
 </body>
